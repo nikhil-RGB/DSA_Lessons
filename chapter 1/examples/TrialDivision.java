@@ -1,3 +1,4 @@
+package examples;
 import java.util.*;
 public class TrialDivision {
 	public static void main(String[] args) 

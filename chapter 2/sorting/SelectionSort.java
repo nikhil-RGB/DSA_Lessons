@@ -1,3 +1,4 @@
+package sorting;
 public class SelectionSort {
 	public static void main(String[] args) {
 		int[] arr={5,6,9,-2,-9,0};

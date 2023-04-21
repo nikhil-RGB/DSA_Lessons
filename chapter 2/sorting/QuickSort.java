@@ -1,3 +1,4 @@
+package sorting;
 public class QuickSort
 {
   //partitions the array using LOMUTO partition scheme
