@@ -5,8 +5,7 @@ public class SelectionSort {
 		selectionSort(arr);
 		for(int elem:arr)
 		{
-		    
-		 System.out.print(elem+" ");    
+		    System.out.print(elem+" ");    
 		}
 	}
 	
