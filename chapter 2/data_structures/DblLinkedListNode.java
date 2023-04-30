@@ -1,40 +1,45 @@
 package data_structures;
-import java.util.*;
-//an object of this class represents a Doubly-linked list node
-public class DblLinkedListNode<V>
-{
-  private V value;
-  private DblLinkedListNode<V> next;
-  private DblLinkedListNode<V> previous;
-  public DblLinkedListNode(V value,DblLinkedListNode previous,DblLinkedListNode next)
-  {
-	  this.next=next;
-	  this.previous=previous;
-	  this.value=value;
-  }
-  //Returns value of current node
-  public V getValue()
-  {
-   return this.value;    
-  }
-  //setter for value of current node
-  public void setValue(V val)
-  {
-  this.value=val;    
-  } 
-  public Optional<DblLinkedListNode<V>> getNext()
-  {
-   return Optional.ofNullable(this.next);   
-  }
-  public void setNext(DblLinkedListNode<V> value)
-  {
-   this.next=value;    
-  }
-  public Optional<DblLinkedListNode<V>> getPrev()
-  {
-   return Optional.ofNullable(this.previous);    
-  }
-  
-  
-  
+
+import java.util.Optional;
+
+public class DblLinkedListNode<V> {
+    private V value;
+    private DblLinkedListNode<V> next;
+    private DblLinkedListNode<V> previous;
+
+    public DblLinkedListNode(V value,
+                             DblLinkedListNode<V> next,
+                             DblLinkedListNode<V> previous) {
+        this.value = value;
+        this.next = next;
+        this.previous = previous;
+    }
+
+    public Optional<DblLinkedListNode<V>> getNext() {
+        return Optional.ofNullable(next);
+    }
+
+    public Optional<DblLinkedListNode<V>> getPrevious() {
+        return Optional.ofNullable(previous);
+    }
+
+    public V getValue() {
+        return value;
+    }
+
+    public DblLinkedListNode setValue(V value) {
+        this.value = value;
+        return this;
+    }
+
+    public DblLinkedListNode setNext(DblLinkedListNode<V> next) {
+        this.next = next;
+        return this;
+    }
+
+
+    public DblLinkedListNode setPrevious(DblLinkedListNode<V> previous) {
+        this.previous = previous;
+        return this;
+    }
 }

@@ -7,9 +7,10 @@ public class LinkedListNode<V> {
 	private LinkedListNode<V> next;
 	public LinkedListNode(V value,LinkedListNode<V> next) 
 	{
-		
+		this.value=value;
+		this.next=next;
 	}
-	public Optional<LinkedListNode> getNext()
+	public Optional<LinkedListNode<V>> getNext()
 	{
 		return Optional.ofNullable(this.next);
 	}
@@ -17,10 +18,15 @@ public class LinkedListNode<V> {
 	{
 		return this.value;
 	}
-	public void setValue(V value) 
+	public LinkedListNode<V> setValue(V value) 
 	{
 	this.value=value;
+	return this;
 	}
- 
+    public LinkedListNode<V> setNext(LinkedListNode<V> node)
+    {
+    	this.next=node;
+    	return this;
+    }
 }
 
