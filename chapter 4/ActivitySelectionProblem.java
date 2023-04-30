@@ -30,18 +30,18 @@ public class ActivitySelectionProblem {
 	  this.finish=finish;    
 	 }
 	}
-	 public static ArrayList<Activity> select(ArrayList<Activity> activities)      {
+	 public static ArrayList<Activity> select(ArrayList<Activity> activities){
 	 ArrayList<Activity> selected=new ArrayList<>(0);    
-	 Collections.sort(selected,(a1,a2)->Integer.signum(a1.finish-a2.finish));
+	 Collections.sort(activities,(a1,a2)->Integer.signum(a1.finish-a2.finish));
 	 if(activities.size()>0)
 	 {
 	  selected.add(activities.get(0));
-	  selected.remove(0);  
+	  activities.remove(0);  
 	 }
 	 for(int i=0;i<activities.size();++i)
 	 {
 	     Activity current=activities.get(i);
-	     Activity previous=activities.get(activities.size()-1);
+	     Activity previous=selected.get(selected.size()-1);
 	     if(current.start>=previous.finish)
 	     {
 	      //activity is compatible and can be added to the list
