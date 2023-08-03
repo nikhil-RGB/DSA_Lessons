@@ -30,7 +30,7 @@ public Optional<V> dequeue()
  	  Optional.ofNullable(head).ifPresent((val)->{
  		  val.setPrevious(null);
  	  });
- 	  
+ 	 if (head == null) tail = null;
  	  return (Optional<V>) node.map(DblLinkedListNode::getValue);
 }
 
