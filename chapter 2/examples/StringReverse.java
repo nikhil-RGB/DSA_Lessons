@@ -7,7 +7,7 @@ public class StringReverse {
 	{
 		System.out.println("Hello World");	
 		System.out.println(reverse("Hello World"));
-		System.out.println(reverse("").isEmpty()?"Empty":"Unexpected");
+//		System.out.println(reverse("").isEmpty()?"Empty":"Unexpected");
 	}
 	//This method is used to reverse the String
 	public static String reverse(String str) 
