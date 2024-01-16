@@ -7,6 +7,7 @@ public class QueueArray<V> {
 	private V[] array;
 	private int headPtr=0;
 	private int tailPtr=0;
+	private boolean full;
 	//main method for testing.
 	public static void main(String[] args) {
 		 QueueArray<String> q = new QueueArray<>(5);
@@ -62,5 +63,24 @@ public class QueueArray<V> {
 			return Optional.empty();
 		}
 	}
+	
+    public boolean enqueueSafe(V item) {
+        if (!full) {
+            array[tailPtr] = item;
+            tailPtr = (tailPtr + 1) % array.length;
+            this.full = tailPtr == headPtr;
+            return true;
+        }
+        return false;
+    }
+
+    public Optional<V> dequeueSafe() {
+        if (headPtr != tailPtr || full) {
+            Optional<V> item = Optional.of(array[headPtr]);
+            headPtr = (headPtr + 1) % array.length;
+            this.full = false;
+            return item;
+        } else return Optional.empty();
+    }
 	
 }
